@@ -1,20 +1,22 @@
 #include <stdio.h>
 
-void f(void);
+void sub(void);
 
-int i;
 int main(void)
 {
-    for (i=0;i<5;i++)
-    {
-        f();
-    }
+    int i;
+    for (i=0;i<3;i++)
+        sub();
     return 0;
 }
 
-void f(void)
-{   
-    int j;
-    for (j=0;j<10;j++)
-        printf("#");
+void sub(void)
+{
+    int auto_count = 0;
+    static int static_count = 0;
+    auto_count++;
+    static_count++;
+    printf("auto_counte=%d\n", auto_count);
+    printf("static_counte=%d\n", static_count);
 }
+
